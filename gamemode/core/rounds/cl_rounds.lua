@@ -46,6 +46,7 @@ hook.Add("HUDPaint", "sls_round_HUDPaint", HUDPaint)
 local function PostStart()
 	ShowTitle("SLASHERS",4)
 	timer.Simple(4, function()
+
 		local TeamName
 		local TeamText
 		local ImageCharac

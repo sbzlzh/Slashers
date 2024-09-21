@@ -65,6 +65,8 @@ net.Receive( "sls_chaseactivated", LastViewByKiller)
 local function chaseMusic()
 	curtime = CurTime()
 
+	if not ChaseSound then return end  -- 添加这一行来检查 ChaseSound 是否为 nil
+
 	if (!LocalPlayer():Alive() && LocalPlayer().ChaseSoundPlaying) then ChaseSound:FadeOut(1.2) end
 	if (!LocalPlayer():Alive()) then return end
 	if !LocalPlayer().LastViewByKillerTime then return end

@@ -11,8 +11,12 @@ local LANG
 GM.LANG = {}
 
 function GM.LANG:GetString(key, ...)
-	return LANG[key] and string.format(LANG[key], ...) or "Unknow key string"
+    if LANG == nil then
+        error("Language has not been loaded yet!")
+    end
+    return LANG[key] and string.format(LANG[key], ...) or "Unknow key string"
 end
+
 
 local function LoadLanguage(lang)
 	local languagesPath = "slashers/gamemode/languages"
